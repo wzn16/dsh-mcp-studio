@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="heroTitle heroDesc">
+  <title id="heroTitle">dsh-mcp-console — live MCP server state for DeepSeek Harness</title>
+  <desc id="heroDesc">A plugin for DeepSeek Harness that shows every MCP server's live connection state and lets you probe, restart and edit each server from the app instead of editing YAML. The panel on the right lists five connected servers with their tool counts.</desc>
+
+  <defs>
+    <linearGradient id="heroInk" x1="0" y1="0" x2="0" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0A0C0F"/>
+      <stop offset="1" stop-color="#050607"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="360" rx="26" fill="url(#heroInk)"/>
+  <rect x="0.5" y="0.5" width="1199" height="359" rx="25.5" fill="none" stroke="#1B2026"/>
+
+  <!-- title block -->
+  <g id="title-block">
+    <text x="56" y="70" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" letter-spacing="2.4" fill="#7E858F">DEEPSEEK HARNESS · CLIENT PLUGIN</text>
+    <text x="56" y="139" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="60" font-weight="600" letter-spacing="-1.4" fill="#F5F7FA">dsh-mcp-console</text>
+    <text x="56" y="192" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="22" fill="#C3C9D1">Every MCP server in your profile, live.</text>
+    <text x="56" y="226" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="22" fill="#C3C9D1">Probe it, restart it, edit it — no YAML, no restart.</text>
+    <text x="56" y="304" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" fill="#7E858F">4 surfaces · MIT · dsh ≥ 0.2.2-rc.2</text>
+  </g>
+
+  <!-- project material: the state panel the plugin renders -->
+  <g id="state-panel">
+    <rect x="700" y="40" width="444" height="280" rx="16" fill="#0C0F13" stroke="#1E242B"/>
+    <text x="724" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="20" font-weight="600" fill="#F5F7FA">MCP servers</text>
+    <text x="1120" y="76" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" fill="#8D949E">5 / 5 connected</text>
+    <line x1="724" y1="94" x2="1120" y2="94" stroke="#1E242B"/>
+
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18">
+      <circle cx="728" cy="121" r="4" fill="#22C55E"/>
+      <text x="748" y="127" fill="#DDE2E8">code-review-graph</text>
+      <text x="1120" y="127" text-anchor="end" fill="#8D949E">30 tools</text>
+
+      <circle cx="728" cy="157" r="4" fill="#22C55E"/>
+      <text x="748" y="163" fill="#DDE2E8">dbx</text>
+      <text x="1120" y="163" text-anchor="end" fill="#8D949E">20 tools</text>
+
+      <circle cx="728" cy="193" r="4" fill="#22C55E"/>
+      <text x="748" y="199" fill="#DDE2E8">inspo</text>
+      <text x="1120" y="199" text-anchor="end" fill="#8D949E">15 tools</text>
+
+      <circle cx="728" cy="229" r="4" fill="#F59E0B"/>
+      <text x="748" y="235" fill="#DDE2E8">officecli</text>
+      <text x="1120" y="235" text-anchor="end" fill="#8D949E">1 tool</text>
+
+      <circle cx="728" cy="265" r="4" fill="#22C55E"/>
+      <text x="748" y="271" fill="#DDE2E8">idea-mcp</text>
+      <text x="1120" y="271" text-anchor="end" fill="#8D949E">1 tool</text>
+    </g>
+
+    <line x1="724" y1="286" x2="1120" y2="286" stroke="#1E242B"/>
+    <text x="724" y="307" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#5F666F">probe → 30 tool names · 1631 ms</text>
+  </g>
+</svg>

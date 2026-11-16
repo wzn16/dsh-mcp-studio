@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.2 — 2026-11-16
+
+- README rewritten around a first screen that answers "what is this" on its own: an SVG hero carrying
+  the real state panel, then the console screenshot as proof, then the mechanism diagram.
+- New README diagrams: `assets/readme/hero.svg` and `assets/readme/flow.svg` (hand-written SVG, system
+  fonts, no remote assets).
+- All four surfaces now shown as a thumbnail row instead of separate sections; install path leads with
+  the in-app route before any command.
+- Chinese README mirrors the same structure.
+
 ## 1.0.1 — 2026-11-16
 
 - Fixed: the plugin showed no icon in the plugin list. `package.json` now declares a top-level

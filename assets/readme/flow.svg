@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="flowTitle flowDesc">
+  <title id="flowTitle">How dsh-mcp-console talks to the host</title>
+  <desc id="flowDesc">Your profile holds the MCP server definitions. The host plugin dsh-mcp-manager owns them and exposes a state stream, probe, restart and a revision-fenced config form. This plugin renders four surfaces from those channels and never parses the YAML itself.</desc>
+
+  <rect width="1200" height="340" rx="26" fill="#0A0C0F"/>
+  <rect x="0.5" y="0.5" width="1199" height="339" rx="25.5" fill="none" stroke="#1B2026"/>
+
+  <defs>
+    <marker id="arrowA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1 L9 5 L0 9 z" fill="#46536A"/>
+    </marker>
+  </defs>
+
+  <g id="lane-profile">
+    <rect x="44" y="52" width="300" height="212" rx="14" fill="#0C0F13" stroke="#1E242B"/>
+    <text x="68" y="88" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="21" font-weight="600" fill="#F5F7FA">your profile</text>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#8D949E">
+      <text x="68" y="126">mcp-manager:</text>
+      <text x="68" y="154">  config.servers:</text>
+      <text x="86" y="182" fill="#C3C9D1">code-review-graph</text>
+      <text x="86" y="210" fill="#C3C9D1">dbx · inspo · officecli</text>
+      <text x="68" y="240" fill="#5F666F" font-size="17">one file, comments intact</text>
+    </g>
+  </g>
+
+  <g id="lane-host">
+    <rect x="452" y="52" width="300" height="212" rx="14" fill="#0C0F13" stroke="#2C3A52"/>
+    <text x="476" y="88" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="21" font-weight="600" fill="#F5F7FA">dsh-mcp-manager</text>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19">
+      <text x="476" y="124" fill="#7FA6EE">watch</text>
+      <text x="576" y="124" fill="#8D949E">state stream</text>
+      <text x="476" y="152" fill="#7FA6EE">probe</text>
+      <text x="576" y="152" fill="#8D949E">tool names</text>
+      <text x="476" y="180" fill="#7FA6EE">restart</text>
+      <text x="576" y="180" fill="#8D949E">reconnect</text>
+      <text x="476" y="208" fill="#7FA6EE">config</text>
+      <text x="576" y="208" fill="#8D949E">atomic write</text>
+      <text x="476" y="238" fill="#5F666F" font-size="17">revision-fenced</text>
+    </g>
+  </g>
+
+  <g id="lane-ui">
+    <rect x="860" y="52" width="296" height="212" rx="14" fill="#0C0F13" stroke="#1E242B"/>
+    <text x="884" y="88" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="21" font-weight="600" fill="#F5F7FA">dsh-mcp-console</text>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#C3C9D1">
+      <text x="884" y="124">console</text>
+      <text x="884" y="152">popover</text>
+      <text x="884" y="180">settings page</text>
+      <text x="884" y="208">bundle row</text>
+      <text x="884" y="238" fill="#5F666F" font-size="17">no YAML parsing</text>
+    </g>
+  </g>
+
+  <g id="links" stroke="#46536A" stroke-width="2" fill="none">
+    <path d="M344 158 L448 158" marker-end="url(#arrowA)"/>
+    <path d="M752 158 L856 158" marker-end="url(#arrowA)"/>
+  </g>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" fill="#5F666F">
+    <text x="348" y="144">owns</text>
+    <text x="756" y="144">renders</text>
+    <text x="44" y="304">state and writes only ever go through the host's remote methods and config form.</text>
+  </g>
+</svg>
