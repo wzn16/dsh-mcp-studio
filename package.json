@@ -4,6 +4,15 @@
   "private": true,
   "type": "module",
   "icon": "icon.svg",
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "docs/screenshots",
+    "assets/readme",
+    "test/smoke.mjs"
+  ],
   "description": "MCP server console for DeepSeek Harness: live status, connectivity probe, restart, and in-place edits for MCP servers.",
   "license": "MIT",
   "author": "wzn16",
@@ -37,10 +46,9 @@
     "client.js",
     "cordis.patch.yml",
     "icon.svg",
-    "README.md",
-    "README.zh.md",
-    "CHANGELOG.md",
-    "LICENSE"
+    "docs/**",
+    "assets/**",
+    "test/**"
   ],
   "dsh": {
     "bundle": {
