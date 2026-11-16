@@ -1522,7 +1522,7 @@ window.__ModuleLoader__.load({
 					})
 					.then(function (accepted) {
 						if (accepted === true) store.toast("ok", okText);
-						else store.toast("error", "Host 拒绝了这次修改（配置已被外部改动或校验未通过）");
+						else store.toast("error", "宿主拒绝了这次修改（配置可能已被别处改动），表单已重新读取，请再试一次");
 						return accepted === true;
 					})
 					.catch(function (error) {
