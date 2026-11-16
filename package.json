@@ -1,8 +1,9 @@
 {
   "name": "dsh-mcp-console",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "type": "module",
+  "icon": "icon.svg",
   "description": "MCP server console for DeepSeek Harness: live status, connectivity probe, restart, and in-place edits for MCP servers.",
   "license": "MIT",
   "author": "wzn16",

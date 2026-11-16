@@ -8,6 +8,8 @@ The official `mcp-manager` plugin owns the data and exposes remote methods (`wat
 `restart`) plus a settings form, but ships **no UI** for them. This plugin is that UI. It reads and
 writes through the official channels, so your comments and the rest of your config file stay intact.
 
+![The console: server list with live state on the left, detail pane with tool list and probe result on the right](docs/screenshots/console.jpg)
+
 ## Why this exists
 
 Before this plugin, answering "did my MCP server actually connect?" meant grepping YAML and reading
@@ -52,6 +54,29 @@ Any of the three entry points can be switched off in the **入口** (entries) bl
 the top of the settings page and in the console. The choice is stored per browser profile in
 `localStorage` under `dsh-mcp-console:prefs`; it never touches your config file. The console main
 panel and the bundle row stay registered so the plugin is always reachable.
+
+### Popover
+
+Click the `MCP n/m` chip in the session header: connected counts, one row per server with its live
+state and tool count, inline probe/restart, and a way into the console. It is a floating panel, so it
+never replaces the conversation.
+
+![The popover: counts, one row per server, inline probe and restart, and a link into the console](docs/screenshots/popover.jpg)
+
+### Settings page
+
+A single-column card page — settings panels are narrow, so this one is not the two-column console: one
+card per server (state, transport summary, probe/restart/enable), the entry switches on top, nothing
+that needs a second column.
+
+![The settings page: entry switches on top, one card per server below](docs/screenshots/settings.jpg)
+
+### Bundle page
+
+On the plugin's own page in Settings → Plugins, this plugin contributes the same settings view, so you
+can manage servers exactly where you found the plugin.
+
+![The plugin page: description, the entries block and the per-server cards](docs/screenshots/plugin.jpg)
 
 ## Managing servers
 

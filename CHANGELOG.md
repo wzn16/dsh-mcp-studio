@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1 — 2026-11-16
+
+- Fixed: the plugin showed no icon in the plugin list. `package.json` now declares a top-level
+  `"icon"` (the field other third-party plugins use), and `icon.svg` uses explicit colours instead of
+  `currentColor`, which disappeared against the dark theme.
+- README: added screenshots of all four surfaces (English and Chinese).
+
 ## 1.0.0 — 2026-11-16
 
 First public release.
