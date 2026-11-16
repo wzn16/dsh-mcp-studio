@@ -118,10 +118,12 @@ dsh plugin --profile <你的 profile> add link:/abs/path/to/dsh-mcp-console
 ```bash
 # 语法（DSH 自带 Electron，用它的 Node）
 ELECTRON_RUN_AS_NODE=1 "/Applications/DeepSeek Harness.app/Contents/MacOS/DeepSeek Harness" --check client.js
+
+# 冒烟测试：43 项断言，不开浏览器、零依赖
+ELECTRON_RUN_AS_NODE=1 "/Applications/DeepSeek Harness.app/Contents/MacOS/DeepSeek Harness" test/smoke.mjs
 ```
 
-另有一个不依赖 DOM 的冒烟测试（`vm` + 假 React + 假 ctx），覆盖 43 项行为：槽位注册、状态流帧、
-probe/mutate 调用形状、四个界面、入口开关。
+冒烟测试（`vm` + 假 React + 假 ctx）覆盖：槽位注册、状态流帧、probe/mutate 调用形状、四个界面、入口开关。
 
 ## 路线图
 

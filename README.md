@@ -131,10 +131,13 @@ Checks used while developing:
 ```bash
 # syntax (the app's bundled Node, since DSH ships Electron)
 ELECTRON_RUN_AS_NODE=1 "/Applications/DeepSeek Harness.app/Contents/MacOS/DeepSeek Harness" --check client.js
+
+# smoke test: 43 assertions, no browser, no dependencies
+ELECTRON_RUN_AS_NODE=1 "/Applications/DeepSeek Harness.app/Contents/MacOS/DeepSeek Harness" test/smoke.mjs
 ```
 
-A dependency-free DOM-less smoke test (`vm` + fake React + fake ctx) exercised 43 behaviours:
-slot registration, watch frames, probe/mutate call shapes, the four surfaces, and the entry switches.
+The smoke test (`vm` + fake React + fake ctx) covers slot registration, watch frames, the
+probe/mutate call shapes, the four surfaces, and the entry switches.
 
 ## Roadmap
 
