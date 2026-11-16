@@ -1,6 +1,6 @@
-![dsh-mcp-console：你配置里的每个 MCP 服务器，实时状态看得见](assets/readme/hero.svg)
+![dsh-mcp-studio：你配置里的每个 MCP 服务器，实时状态看得见](assets/readme/hero.svg)
 
-**dsh-mcp-console** 是 DeepSeek Harness 官方 `mcp-manager` 缺的那层界面：实时看每个 MCP 服务器的
+**dsh-mcp-studio** 是 DeepSeek Harness 官方 `mcp-manager` 缺的那层界面：实时看每个 MCP 服务器的
 **连接状态**、**探测**它的工具清单、**重连**、**就地改配置**——不用手改 `cordis.patch.yml`，也不用重启应用。
 
 界面上的状态全部来自宿主自己的运行时状态流，每一次写入都走官方配置表单（带 revision 围栏的原子 mutate）。
@@ -50,8 +50,8 @@
 **手工**：只用 pnpm **不会**注册 bundle，两步都要做：
 
 ```bash
-dsh plugin --profile <你的profile> add link:/abs/path/to/dsh-mcp-console
-# 再把 "dsh-mcp-console" 加进
+dsh plugin --profile <你的profile> add link:/abs/path/to/dsh-mcp-studio
+# 再把 "dsh-mcp-studio" 加进
 #   $DSH_HOME/profiles/<你的profile>/package.json 的 "dsh".profile.bundles
 ```
 
@@ -72,7 +72,7 @@ dsh plugin --profile <你的profile> add link:/abs/path/to/dsh-mcp-console
 ## 入口与偏好
 
 三个入口都能在 **入口** 区关掉（设置页顶部、控制台里都有）。开关保存在浏览器 `localStorage` 的
-`dsh-mcp-console:prefs`，不写配置文件。控制台主面板与插件页那行始终注册着，保证随时能进得来。
+`dsh-mcp-studio:prefs`，不写配置文件。控制台主面板与插件页那行始终注册着，保证随时能进得来。
 
 ## 已知限制
 
@@ -86,7 +86,7 @@ dsh plugin --profile <你的profile> add link:/abs/path/to/dsh-mcp-console
 
 | 现象 | 处理 |
 | --- | --- |
-| 侧边栏图标或胶囊不见了 | 在 **入口** 里被关掉了——从「设置 → MCP 服务器」重新打开，或清掉 `dsh-mcp-console:prefs` |
+| 侧边栏图标或胶囊不见了 | 在 **入口** 里被关掉了——从「设置 → MCP 服务器」重新打开，或清掉 `dsh-mcp-studio:prefs` |
 | 控制台说远程方法不可用 | 这个 profile 没启用 `mcp-manager`，或它的 remote 还没挂上（面板会重试并写出原因） |
 | 全部显示「状态未知」 | 运行时状态流还没推第一帧；横幅里带着 watch 的错误信息 |
 | 编辑被拒 | 宿主拒绝了这次 mutate，通常是并发写入；表单会重新读取，再试一次 |
@@ -101,8 +101,8 @@ dsh plugin --profile <你的profile> add link:/abs/path/to/dsh-mcp-console
 
 DSH `>=0.2.2-rc.2 <0.3.0-0`（在 `0.2.2-rc.3` 上实测）。纯客户端，`index.js` 是空的。
 注册的槽位：`main`（key `mcp-console`）、`sidebar.panellist`（id `mcp-console`）、
-`conversation.session.header.utilities`（id `dsh-mcp-console-pill`）、`settings.section`（id
-`mcp-servers`）、`plugins.bundle.config`（key `dsh-mcp-console`）。升级若改了槽位名，控制台照样能打开，
+`conversation.session.header.utilities`（id `dsh-mcp-studio-pill`）、`settings.section`（id
+`mcp-servers`）、`plugins.bundle.config`（key `dsh-mcp-studio`）。升级若改了槽位名，控制台照样能打开，
 并说明是哪个槽位失败。
 
 ## 开发

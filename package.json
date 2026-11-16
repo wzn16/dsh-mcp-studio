@@ -1,6 +1,6 @@
 {
-  "name": "dsh-mcp-console",
-  "version": "1.0.2",
+  "name": "dsh-mcp-studio",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "icon": "icon.svg",
@@ -26,11 +26,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wzn16/dsh-mcp-console.git"
+    "url": "git+https://github.com/wzn16/dsh-mcp-studio.git"
   },
-  "homepage": "https://github.com/wzn16/dsh-mcp-console#readme",
+  "homepage": "https://github.com/wzn16/dsh-mcp-studio#readme",
   "bugs": {
-    "url": "https://github.com/wzn16/dsh-mcp-console/issues"
+    "url": "https://github.com/wzn16/dsh-mcp-studio/issues"
   },
   "engines": {
     "dsh": ">=0.2.2-rc.2 <0.3.0-0"

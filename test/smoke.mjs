@@ -1,5 +1,5 @@
 /**
- * dsh-mcp-console 客户端逻辑冒烟测试（不依赖浏览器）。
+ * dsh-mcp-studio 客户端逻辑冒烟测试（不依赖浏览器）。
  *
  * 做法：用 vm 载入 client.js，喂一个假的 __ModuleLoader__ / React / primitives /
  * ctx（slots、configForms、remote.mcpManager），跑完 apply 再用迷你渲染器把主面板
@@ -232,7 +232,7 @@ check(!!settingsReg && settingsReg.spec.id === "mcp-servers", "settings.section 
 check(!!settingsReg && typeof settingsReg.spec.label === "function" && settingsReg.spec.label() === "MCP 服务器", "设置页入口文案 = MCP 服务器");
 check(calls.injectSlots.includes("settings.section"), "先 inject 探测 settings.section 再注册");
 const pillReg = calls.register.find((r) => r.spec.name === "conversation.session.header.utilities");
-check(!!pillReg && pillReg.spec.id === "dsh-mcp-console-pill", "会话头部胶囊注册 id=dsh-mcp-console-pill");
+check(!!pillReg && pillReg.spec.id === "dsh-mcp-studio-pill", "会话头部胶囊注册 id=dsh-mcp-studio-pill");
 check(!!pillReg && pillReg.spec.order === 7, "胶囊排在任务胶囊(5)/UAK(6)之后");
 check(calls.injectSlots.includes("conversation.session.header.utilities"), "先 inject 探测头部槽位再注册");
 
@@ -339,7 +339,7 @@ if (settingsReg) {
 
 // 插件页摘要行（plugins.bundle.config，key = 包名）
 const bundleReg = calls.register.find((r) => r.spec.name === "plugins.bundle.config");
-check(!!bundleReg && bundleReg.spec.key === "dsh-mcp-console", "插件页配置槽位注册 key=dsh-mcp-console");
+check(!!bundleReg && bundleReg.spec.key === "dsh-mcp-studio", "插件页配置槽位注册 key=dsh-mcp-studio");
 if (bundleReg) {
 	texts.length = 0;
 	render(bundleReg.Component({ view: "summary" }));

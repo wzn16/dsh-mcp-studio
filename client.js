@@ -1,5 +1,5 @@
 /**
- * dsh-mcp-console — 客户端界面。
+ * dsh-mcp-studio — 客户端界面。
  *
  * 手写 __ModuleLoader__ bundle（零构建步骤）：
  *   - 运行时状态来自 @deepseek-ai/dsh-mcp-manager 的远程方法
@@ -11,11 +11,11 @@
  *
  * 侧边栏入口在 sidebar.panellist 槽位，主面板 key 与它同 id（PANEL_ID）。
  *
- * @module dsh-mcp-console/client
+ * @module dsh-mcp-studio/client
  */
 
 window.__ModuleLoader__.load({
-	id: "dsh-mcp-console",
+	id: "dsh-mcp-studio",
 	factory: function (require) {
 		var React = require("react");
 		var primitives = {};
@@ -70,7 +70,7 @@ window.__ModuleLoader__.load({
 
 		// ── 入口开关（本机偏好，存 localStorage，不写配置文件）─────────────────
 
-		var PREFS_KEY = "dsh-mcp-console:prefs";
+		var PREFS_KEY = "dsh-mcp-studio:prefs";
 		var DEFAULT_PREFS = { sidebarEntry: true, headerPill: true, settingsSection: true };
 
 		function readPrefs() {
@@ -1742,7 +1742,7 @@ window.__ModuleLoader__.load({
 
 		// ── 样式 ────────────────────────────────────────────────────────────────
 
-		var STYLE_ID = "dsh-mcp-console-style";
+		var STYLE_ID = "dsh-mcp-studio-style";
 		var CSS = [
 			".mc-root{display:flex;flex-direction:column;flex:1 1 auto;height:100%;min-height:0;background:var(--dsw-alias-bg-base);color:var(--dsw-alias-label-primary);font-size:13px;line-height:1.5;font-family:-apple-system,'PingFang SC','HarmonyOS Sans SC','MiSans','Microsoft YaHei',system-ui,sans-serif;position:relative}",
 			".mc-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px}",
@@ -2495,7 +2495,7 @@ window.__ModuleLoader__.load({
 					);
 				}
 
-				// 插件页（设置 → 插件 → dsh-mcp-console）：summary 只放一行摘要 + 入口，
+				// 插件页（设置 → 插件 → dsh-mcp-studio）：summary 只放一行摘要 + 入口，
 				// page 视图直接给设置页那份单列卡片，省得再写一套。
 				function BundleConfig(props) {
 					var state = useSyncExternalStore(store.subscribe, store.getSnapshot, store.getSnapshot);
@@ -2596,7 +2596,7 @@ window.__ModuleLoader__.load({
 								return ctx.slots.register(
 									{
 										name: "conversation.session.header.utilities",
-										id: "dsh-mcp-console-pill",
+										id: "dsh-mcp-studio-pill",
 										order: 7,
 										label: function () {
 											return "MCP 服务器";
@@ -2619,7 +2619,7 @@ window.__ModuleLoader__.load({
 								);
 							});
 							ensure("plugins.bundle.config", true, function () {
-								return ctx.slots.register({ name: "plugins.bundle.config", key: "dsh-mcp-console" }, BundleConfig);
+								return ctx.slots.register({ name: "plugins.bundle.config", key: "dsh-mcp-studio" }, BundleConfig);
 							});
 						}
 

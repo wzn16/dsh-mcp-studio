@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="flowTitle flowDesc">
-  <title id="flowTitle">How dsh-mcp-console talks to the host</title>
+  <title id="flowTitle">How dsh-mcp-studio talks to the host</title>
   <desc id="flowDesc">Your profile holds the MCP server definitions. The host plugin dsh-mcp-manager owns them and exposes a state stream, probe, restart and a revision-fenced config form. This plugin renders four surfaces from those channels and never parses the YAML itself.</desc>
 
   <rect width="1200" height="340" rx="26" fill="#0A0C0F"/>
@@ -41,7 +41,7 @@
 
   <g id="lane-ui">
     <rect x="860" y="52" width="296" height="212" rx="14" fill="#0C0F13" stroke="#1E242B"/>
-    <text x="884" y="88" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="21" font-weight="600" fill="#F5F7FA">dsh-mcp-console</text>
+    <text x="884" y="88" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="21" font-weight="600" fill="#F5F7FA">dsh-mcp-studio</text>
     <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#C3C9D1">
       <text x="884" y="124">console</text>
       <text x="884" y="152">popover</text>

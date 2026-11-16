@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.0 — 2026-11-16
+
+- Renamed the plugin and repository from `dsh-mcp-console` to `dsh-mcp-studio`. The registry already had an
+  unrelated `dsh-mcp-console`, so the old name could never be ours; this one can. The bundle id, patch id,
+  `plugins.bundle.config` key and the client module id moved with it — remove the old bundle before
+  installing this one.
+- Entry switches now live under `localStorage["dsh-mcp-studio:prefs"]`, so they reset to their defaults once.
+- Screenshots: the console, settings and plugin-page shots had local paths in them, which exposed the
+  machine's user name. Those lines are masked now.
+
 ## 1.0.2 — 2026-11-16
 
 - README rewritten around a first screen that answers "what is this" on its own: an SVG hero carrying
@@ -27,7 +37,7 @@ First public release.
   "open console" entry.
 - **Settings page**: single-column card layout, plus the entry switches.
 - **Bundle row**: one-line summary in the plugin's own settings page.
-- Entry switches persisted per browser profile (`localStorage` key `dsh-mcp-console:prefs`).
+- Entry switches persisted per browser profile (`localStorage` key `dsh-mcp-studio:prefs`).
 - Probe, restart, enable/disable, add, edit, delete through the official `mcp-manager` remote
   methods and config form (revision-fenced atomic mutate).
 - Read-only handling for servers contributed by other plugins (`configured: false`).

@@ -1,6 +1,6 @@
-![dsh-mcp-console: every MCP server in your profile, live](assets/readme/hero.svg)
+![dsh-mcp-studio: every MCP server in your profile, live](assets/readme/hero.svg)
 
-**dsh-mcp-console** is the missing UI for DeepSeek Harness's official `mcp-manager` plugin: see each
+**dsh-mcp-studio** is the missing UI for DeepSeek Harness's official `mcp-manager` plugin: see each
 MCP server's **live connection state**, **probe** it for its tool list, **restart** it, and **edit it in
 place** — without hand-editing `cordis.patch.yml` and without restarting the app.
 
@@ -50,15 +50,15 @@ settings form are all still there.
 **From the app**: Settings → Plugins → add a plugin → point it at this repository, then reload the
 window once (⌘R / Ctrl+R) so the client bundle is picked up.
 
-**With an agent**: ask it to install `/path/to/dsh-mcp-console` into your profile. That calls
+**With an agent**: ask it to install `/path/to/dsh-mcp-studio` into your profile. That calls
 `plugin_manager` with `action: install_bundle`, which links the package, appends it to
 `dsh.profile.bundles`, and reports `application: applied`.
 
 **By hand**: pnpm alone does **not** register the bundle, so do both steps:
 
 ```bash
-dsh plugin --profile <your-profile> add link:/abs/path/to/dsh-mcp-console
-# then add "dsh-mcp-console" to "dsh".profile.bundles in
+dsh plugin --profile <your-profile> add link:/abs/path/to/dsh-mcp-studio
+# then add "dsh-mcp-studio" to "dsh".profile.bundles in
 #   $DSH_HOME/profiles/<your-profile>/package.json
 ```
 
@@ -82,7 +82,7 @@ console shows the last probe result with its timestamp instead of polling.
 ## Entries and preferences
 
 The three entry points can each be switched off in the **入口** block (top of the settings page, and in
-the console). The choice lives in `localStorage` under `dsh-mcp-console:prefs`; it never touches your
+the console). The choice lives in `localStorage` under `dsh-mcp-studio:prefs`; it never touches your
 config file. The console panel and the bundle row stay registered so the plugin is always reachable.
 
 ## Known limitations
@@ -97,7 +97,7 @@ config file. The console panel and the bundle row stay registered so the plugin 
 
 | Symptom | Fix |
 | --- | --- |
-| Sidebar icon or chip missing | It is switched off in **入口** — reopen Settings → MCP 服务器, or clear `dsh-mcp-console:prefs` |
+| Sidebar icon or chip missing | It is switched off in **入口** — reopen Settings → MCP 服务器, or clear `dsh-mcp-studio:prefs` |
 | Console says the remote method is unavailable | `mcp-manager` is not enabled in this profile, or its remotes have not mounted yet (the panel retries and names the reason) |
 | Everything reads "状态未知" | The runtime stream has not produced a frame yet; the banner carries the watch error |
 | Edit rejected | The host refused the mutate, usually a concurrent write; the form re-reads, retry once |
@@ -113,8 +113,8 @@ no network calls of its own.
 
 DSH `>=0.2.2-rc.2 <0.3.0-0` (verified on `0.2.2-rc.3`). Client-side only — `index.js` does nothing.
 Slots registered: `main` (key `mcp-console`), `sidebar.panellist` (id `mcp-console`),
-`conversation.session.header.utilities` (id `dsh-mcp-console-pill`), `settings.section` (id
-`mcp-servers`), `plugins.bundle.config` (key `dsh-mcp-console`). If an upgrade renames a slot, the
+`conversation.session.header.utilities` (id `dsh-mcp-studio-pill`), `settings.section` (id
+`mcp-servers`), `plugins.bundle.config` (key `dsh-mcp-studio`). If an upgrade renames a slot, the
 console still opens and says which one failed.
 
 ## Development
