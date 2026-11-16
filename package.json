@@ -1,0 +1,57 @@
+{
+  "name": "dsh-mcp-console",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "MCP server console for DeepSeek Harness: live status, connectivity probe, restart, and in-place edits for MCP servers.",
+  "license": "MIT",
+  "author": "wzn16",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "mcp",
+    "model-context-protocol",
+    "console"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wzn16/dsh-mcp-console.git"
+  },
+  "homepage": "https://github.com/wzn16/dsh-mcp-console#readme",
+  "bugs": {
+    "url": "https://github.com/wzn16/dsh-mcp-console/issues"
+  },
+  "engines": {
+    "dsh": ">=0.2.2-rc.2 <0.3.0-0"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "README.zh.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "slots",
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ]
+    }
+  }
+}
